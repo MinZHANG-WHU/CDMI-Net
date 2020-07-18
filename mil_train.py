@@ -29,8 +29,9 @@ def test(model, test_loader, args):
         gts.append(label[0].numpy()[0])
         data_v_1 = Variable(data1)
         data_v_2 = Variable(data2)
-        data_v_1 = data_v_1.cuda()
-        data_v_2 = data_v_2.cuda()
+        if not args.no_gpu:
+            data_v_1 = data_v_1.cuda()
+            data_v_2 = data_v_2.cuda()
 
         pred_prob, pred_label, attention_weights = model.eval_img(
             data_v_1, data_v_2)
@@ -79,9 +80,13 @@ def train(model, args):
         model.cuda()
     # model.print_size()
 
-    optimizer = optim.Adam(
-        model.parameters(), lr=args.lr, betas=(
-            0.9, 0.999), weight_decay=args.decay)
+    #optimizer = optim.Adam(
+    #    model.parameters(), lr=args.lr, betas=(
+    #        0.9, 0.999), weight_decay=args.decay)
+
+    optimizer = torch.optim.SGD(model.parameters(),
+                                lr=args.lr, momentum=0.99,
+                                weight_decay=args.decay)
 
     train_loss = 0.
     train_error = 0.
@@ -170,7 +175,7 @@ if __name__ == "__main__":
     args.add_argument(
         '--decay',
         type=float,
-        default=10e-5,
+        default=10e-4,
         help='Weight decay.')
     args.add_argument('--seed', type=int, default=1, help='Random seed.')
     args.add_argument('--no-gpu', action='store_true', help='Using CPU.')
