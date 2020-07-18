@@ -67,8 +67,8 @@ To train the CDMI-Net on the training set and  test its accuracy on the test set
 python mil_train.py --data_dir DATA_DIR --weight_dir WEIGHT_DIR
 ```
 
-DATA_DIR: the absolute path of the training data set.
-WEIGHT_DIR: the absolute path to the saved check point.
+* DATA_DIR: the absolute path of the training data set.
+* WEIGHT_DIR: the absolute path to the saved check point.
 
 ##### 3. Testing
 
@@ -77,11 +77,11 @@ WEIGHT_DIR: the absolute path to the saved check point.
 ```
 python mil_infer.py --t1 T1_IMAGE_PATH --t2 T2_IMAGE_PATH --weight CHECK_POINT_PATH--save-dir OUTPUT_PATH --gt GT_PATH 
 ```
-T1_IMAGE_PATH: the first period image path (t1 must be 3 bands).
-T2_IMAGE_PATH: the second period image path (Its image size must be the same of t1).
-CHECK_POINT_PATH: the pre-trained CDMI-Net model path.
-OUTPUT_PATH: the output path for the predicted results.
-GT_PATH: the ground truth image path (0 and 255 represent unchanged and changed respectively).
+* T1_IMAGE_PATH: the first period image path (t1 must be 3 bands).
+* T2_IMAGE_PATH: the second period image path (Its image size must be the same of t1).
+* CHECK_POINT_PATH: the pre-trained CDMI-Net model path.
+* OUTPUT_PATH: the output path for the predicted results.
+* GT_PATH: the ground truth image path (0 and 255 represent unchanged and changed respectively).
 
 Finally, pixel score map (pixel_score.tif), binary image (pixel_bm.tif), binary image with FLSE (pixel_flse.tif), and scene level result (scene.tif) will be generated under the "OUTPUT_PATH" folder.
 
