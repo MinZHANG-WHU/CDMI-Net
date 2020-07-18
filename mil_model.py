@@ -54,8 +54,8 @@ class Attention(nn.Module):
 
     def eval_img(self, X1, X2):
         Y_prob, Y_hat, A, _ = self.forward(X1, X2)
-        Y_prob = Y_prob.cpu().numpy()[0, 0]
-        Y_hat = Y_hat.cpu().numpy()[0, 0]
+        Y_prob = Y_prob.cpu().detach().numpy()[0, 0]
+        Y_hat = Y_hat.cpu().detach().numpy()[0, 0]
         return Y_prob, Y_hat, A
 
     def calculate_loss(self, X1, X2, Y):

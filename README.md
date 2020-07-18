@@ -1,6 +1,6 @@
 # CDMI-Net
 
-This repository contains code, network definitions and pre-trained models for a novel deep neural network (CDMI-Net). The CDMI-Net that combines change detection and multiple instance learning (MIL) is proposed for landslide mapping. See Figure 1.
+This repository contains code, network definitions and pre-trained models for a novel deep neural network (CDMI-Net). The CDMI-Net that combines change detection and multiple instance learning (MIL) is proposed for landslide mapping, see figure 1.
 
 The implementation uses the [Pytorch](https://pytorch.org/) framework.
 
@@ -11,13 +11,13 @@ The implementation uses the [Pytorch](https://pytorch.org/) framework.
 ## Motivation
 In a large geographic area, due to the lack of enough landslides (non-landslide is the vast majority), the landslide detection is often considered as a low-likelihood pattern detection rather than a binary classification problem. Therefore, using scene-level change detection is a good solution to filter out most unchanged scenes. In this work, we use the MIL framework to enable CNN to automatically learn the deep features of landslides from scene-level samples, thereby reducing the need for pixel-level samples. A two-stream U-Net with shared weight is designed as a deep feature extractor (Change detection technique), which can help remove ground objects that have similar characteristics to landslides but do not change over time. 
 
-The method is proposed to alleviate two problems in change detection:  1) insufficient pixel-level labeled samples, and (2) low-likelihood of changes. In addition, the proposed method can also be used to detect changes in other ground objects.
+The method is proposed to alleviate two problems in change detection:  1) insufficient pixel-level labeled samples, and 2) low-likelihood of changes. In addition, the proposed method can also be used to detect changes in other ground objects.
 
 ## Content
 
 ### Datasets
 
-To train the CDMI-Net, each image pair was labeled as “positive bag” or “negative bag”. 
+Our data sets are currently not available to the public (It needs permission from the Hong Kong government). Since only scene-level annotations are required, users can quickly generate the training data sets. To train the CDMI-Net, each image pair (i.e. bag) is labeled as “positive bag” (P) or “negative bag” (N).The file organization is as follows: 
 
 ```
 data_dir        
