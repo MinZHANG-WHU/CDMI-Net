@@ -17,7 +17,7 @@ The method is proposed to alleviate two problems in change detection:  1) insuff
 
 ### Datasets
 
-Our data sets are currently not available to the public (It needs permission from the Hong Kong government). Since only scene-level annotations are required, users can quickly generate the training data sets. To train the CDMI-Net, each image pair (i.e. bag) is labeled as “positive bag” (P) or “negative bag” (N).The file organization is as follows: 
+Our data sets are currently not available to the public. Since only scene-level annotations are required, users can quickly generate the training data sets. To train the CDMI-Net, each image pair (i.e. bag) is labeled as “positive bag” (P) or “negative bag” (N).The file organization is as follows: 
 
 ```
 data_dir        
