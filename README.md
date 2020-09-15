@@ -86,7 +86,7 @@ python mil_infer.py --t1 T1_IMAGE_PATH --t2 T2_IMAGE_PATH --weight CHECK_POINT_P
 Finally, pixel score map (pixel_score.tif), binary image (pixel_bm.tif), binary image with FLSE (pixel_flse.tif), and scene level result (scene.tif) will be generated under the "OUTPUT_PATH" folder.
 
 ## References
-If you use this work for your projects, please take the time to cite our paper.
+If you use this work for your projects, please take the time to cite our [paper](https://doi.org/10.1109/LGRS.2020.3007183).
 
 ```
 @ARTICLE{9142246,
